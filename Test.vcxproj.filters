@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="JJ08.CPP">
+    <ClCompile Include="GlobaleNewOperator.CPP">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

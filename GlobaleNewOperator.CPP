@@ -27,7 +27,7 @@ static  size_t timesNew = 0;
 
 inline void* operator new(size_t size) 	 
 {
-	//cout << "jjhou global new(), \t" << size << "\t"; 
+	//cout << " global new(), \t" << size << "\t"; 
 	countNew += size; 
 	++timesNew;  
 	
@@ -40,7 +40,7 @@ inline void* operator new(size_t size)
 
 inline void* operator new[](size_t size)  
 { 
-	//cout << "jjhou global new[](), \t" << size << "\t";
+	//cout << " global new[](), \t" << size << "\t";
 	countArrayNew += size; 				
 	
 	void* p = myAlloc( size ); 
@@ -53,28 +53,28 @@ inline void* operator new[](size_t size)
 //(1) 
 inline void  operator delete(void* ptr, size_t size)  
 {  	
-//	cout << "jjhou global delete(ptr,size), \t" << ptr << "\t" << size << endl;	
+//	cout << "global delete(ptr,size), \t" << ptr << "\t" << size << endl;	
 	countDel += size;  	
 	myFree( ptr ); 			
 }
 //(2)
 inline void  operator delete(void* ptr)  
 {  	
-//	cout << "jjhou global delete(ptr), \t" << ptr << endl;	 	
+//	cout << "global delete(ptr), \t" << ptr << endl;	 	
 	myFree( ptr ); 			
 }	
 
 //(1)
 inline void  operator delete[](void* ptr, size_t size) 
 { 
-//	cout << "jjhou global delete[](ptr,size), \t" << ptr << "\t" << size << endl;
+//	cout << "global delete[](ptr,size), \t" << ptr << "\t" << size << endl;
 	countArrayDel += size; 
 	myFree( ptr ); 			
 }	
 //(2)
 inline void  operator delete[](void* ptr) 
 { 
-//	cout << "jjhou global delete[](ptr), \t" << ptr << endl;
+//	cout << "global delete[](ptr), \t" << ptr << endl;
 	myFree( ptr ); 			
 }
 
